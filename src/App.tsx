@@ -2,7 +2,14 @@
 
 function App() {
   return (
-    <div className="App" sx={{ color: "red.3" }}>
+    <div
+      className="App"
+      sx={{
+        color: "gray.8",
+        fontFamily: "body",
+        fontSize: "0",
+      }}
+    >
       hello, WorkBoard User
     </div>
   );

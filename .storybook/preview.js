@@ -1,3 +1,4 @@
+/** @jsxImportSource @theme-ui/core */
 import { ThemeProvider } from "@theme-ui/core";
 import theme from "@theme-ui/preset-tailwind";
 
@@ -16,7 +17,9 @@ import React from "react";
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
-      <Story />
+      <div sx={{ fontFamily: "body", fontSize: "0", color: "gray.8" }}>
+        <Story />
+      </div>
     </ThemeProvider>
   ),
 ];
