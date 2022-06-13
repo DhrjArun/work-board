@@ -14,8 +14,6 @@ export interface TaskColumnProps {
 }
 export const TaskColumn: React.FC<TaskColumnProps> = React.memo(
   ({ id, index, column, tasks, dispatch }) => {
-    console.log("rerender", id);
-
     const { title } = column;
     const size = column.tasks.length;
     const handleNewTask = useCallback(() => {

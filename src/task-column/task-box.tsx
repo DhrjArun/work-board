@@ -20,8 +20,6 @@ export const TaskBox: React.FC<TaskBoxProps> = React.memo(
     handleTaskDelete,
     handleTaskUpdate,
   }) => {
-    console.log(title);
-
     const isEmpty = title ? true : false;
     const [value, setValue] = useState("");
 
