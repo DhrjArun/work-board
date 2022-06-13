@@ -41,6 +41,7 @@ export const TaskColumn: React.FC<TaskColumnProps> = React.memo(
             className="task-column"
             sx={{
               minWidth: "64",
+              width: "64",
               minHeight: "56",
               background: "gray.2",
               padding: "2",
