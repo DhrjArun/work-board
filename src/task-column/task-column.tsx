@@ -1,21 +1,33 @@
 /** @jsxImportSource @theme-ui/core */
 import { NewTask } from "./new-task";
 import { Droppable, Draggable } from "react-beautiful-dnd";
+import { Task, TaskManagerAction, TaskMangerState } from "./types";
+import { TaskBox } from "./task-box";
 
 export interface TaskColumnProps {
-  label: string;
   id: string;
   index: number;
-  size: number;
-  children?: React.ReactNode;
+  state: TaskMangerState;
+  dispatch: React.Dispatch<TaskManagerAction>;
 }
 export const TaskColumn: React.FC<TaskColumnProps> = ({
-  label,
-  children,
-  size,
   id,
   index,
+  state,
+  dispatch,
 }) => {
+  const { title } = state.taskColumns[id];
+  const size = state.taskColumns[id].tasks.length;
+  function handleNewTask() {
+    const task: Task = { id: new Date().toString(), title: "" };
+    dispatch({ type: "create-new-task", task, taskColumnId: id });
+  }
+  function handleTaskTitleUpdate(id: string, newTitle: string) {
+    dispatch({ type: "update-task-title", id, newTitle });
+  }
+  function handleTaskDelete(taskId: string) {
+    dispatch({ type: "delete-task", taskColumnId: id, taskId });
+  }
   return (
     <Draggable draggableId={id} index={index}>
       {(provided) => (
@@ -24,7 +36,7 @@ export const TaskColumn: React.FC<TaskColumnProps> = ({
           ref={provided.innerRef}
           className="task-column"
           sx={{
-            width: "64",
+            minWidth: "64",
             minHeight: "56",
             background: "gray.2",
             padding: "2",
@@ -40,20 +52,26 @@ export const TaskColumn: React.FC<TaskColumnProps> = ({
             {...provided.dragHandleProps}
             sx={{ color: "gray.7", pt: "2", pb: "3" }}
           >
-            <p sx={{ m: "0" }}>
-              {label} {size} Task
-            </p>
+            <p sx={{ m: "0" }}>{`${title}  ${size} Task`}</p>
           </header>
           <Droppable droppableId={id} type="task">
             {(provided) => (
               <div ref={provided.innerRef} {...provided.droppableProps}>
-                {children}
+                {state.taskColumns[id].tasks.map((id, index) => (
+                  <TaskBox
+                    handleTaskUpdate={handleTaskTitleUpdate}
+                    handleTaskDelete={handleTaskDelete}
+                    index={index}
+                    key={id}
+                    task={state.tasks[id]}
+                  />
+                ))}
                 {provided.placeholder}
               </div>
             )}
           </Droppable>
           <footer sx={{ alignSelf: "end" }}>
-            <NewTask />
+            <NewTask onClick={handleNewTask} />
           </footer>
         </div>
       )}

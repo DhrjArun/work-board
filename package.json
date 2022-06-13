@@ -9,6 +9,7 @@
   "dependencies": {
     "@chakra-ui/transition": "^2.0.2",
     "@emotion/react": "^11.9.0",
+    "@mantine/hooks": "^4.2.9",
     "@reach/listbox": "^0.17.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",

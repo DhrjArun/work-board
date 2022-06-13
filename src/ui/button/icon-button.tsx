@@ -17,7 +17,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     const _icon = React.isValidElement(icon)
       ? React.cloneElement(
           icon,
-          { fonSize: "inherit", size: "60%", strokeWidth: "2.5px" },
+          { fontSize: "inherit", size: "60%", strokeWidth: "2.5px" },
           null
         )
       : null;

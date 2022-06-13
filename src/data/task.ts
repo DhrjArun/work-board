@@ -51,3 +51,55 @@ export const tasks: Task[] = [
     taskColumnId: "Doneee",
   },
 ];
+
+// tasks: {
+//   button: {
+//     title: "Create Button Components",
+//     id: "button",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "Tudumm",
+//   },
+//   Inputs: {
+//     title: "Create Input Components",
+//     id: "Inputs",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "progre",
+//   },
+//   bugwss: {
+//     title: "Fix the Webpack Bug",
+//     id: "bugwss",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "Tudumm",
+//   },
+//   archiv: {
+//     title: "Add the Archive feature",
+//     id: "archiv",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "progre",
+//   },
+//   reactq: {
+//     title: "Migrate to react-query",
+//     id: "reactq",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "Doneee",
+//   },
+//   modals: {
+//     title: "Create Modal Component",
+//     id: "modals",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "Tudumm",
+//   },
+//   lintin: {
+//     title: "Fix the linting issue",
+//     id: "lintin",
+//     description: "",
+//     projectId: "bloodd",
+//     taskColumnId: "Doneee",
+//   },
+// },
