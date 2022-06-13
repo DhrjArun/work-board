@@ -11,13 +11,14 @@ export const TaskManager: React.FC<TaskManagerProps> = () => {
 
   return (
     <TaskColumnContainer dispatch={dispatch} id={state.project.id}>
-      {state.project.taskColumns.map((taskColumn, index) => (
+      {state.project.taskColumns.map((id, index) => (
         <TaskColumn
           index={index}
-          key={taskColumn}
-          id={taskColumn}
+          key={id}
+          id={id}
           dispatch={dispatch}
-          state={state}
+          column={state.taskColumns[id]}
+          tasks={state.tasks}
         ></TaskColumn>
       ))}
     </TaskColumnContainer>

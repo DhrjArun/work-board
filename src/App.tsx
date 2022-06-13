@@ -8,6 +8,7 @@ import { TextField } from "ui/text-field";
 
 function App() {
   const [isShowArchived, setShowArchived] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   return (
     <div
       className="App"
@@ -19,7 +20,7 @@ function App() {
         margin: "auto",
       }}
     >
-      <TaskProvider value={{ isSearching: false, isShowArchived }}>
+      <TaskProvider value={{ searchValue, isShowArchived }}>
         <header
           sx={{
             mb: "3",

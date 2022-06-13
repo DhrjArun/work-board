@@ -2,11 +2,11 @@ import React from "react";
 
 export interface TaskCtxProps {
   isShowArchived: boolean;
-  isSearching: boolean;
+  searchValue: string;
 }
 export const TaskCtx = React.createContext<TaskCtxProps>({
   isShowArchived: false,
-  isSearching: false,
+  searchValue: "",
 });
 
 export const TaskProvider = TaskCtx.Provider;

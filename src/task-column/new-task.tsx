@@ -4,8 +4,6 @@ import { Button, ButtonProps } from "ui";
 
 export interface NewTaskProps extends ButtonProps {}
 export const NewTask: React.FC<NewTaskProps> = React.memo(({ sx, ...rest }) => {
-  console.log("rerender");
-
   return (
     <Button
       className="new-task-btn"
